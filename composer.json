@@ -1,0 +1,23 @@
+{
+  "name": "modular/package",
+  "description": "This is library simplifies the code refactoring, and make system architecture more clear",
+  "type": "library",
+  "require-dev": {
+    "no": "-1",
+    "phplang/scope-exit": "^1.0"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Amr Saidam",
+      "email": "sc.amr.2017@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Modular/Package": "src/"
+    }
+  }
+}

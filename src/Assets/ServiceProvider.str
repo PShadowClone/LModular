@@ -1,0 +1,34 @@
+<?php
+
+namespace {package_name_space}\Providers;
+
+use \Illuminate\Support\ServiceProvider;
+
+class {service_provider_name} extends ServiceProvider
+{
+
+
+    public function boot()
+    {
+        // publish package's routes
+        $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
+        //public packages resources
+        $this->loadViewsFrom(__DIR__ . '/../Resources/views', '{package_name}');
+        //public packages migrations
+         $this->loadMigrationsFrom(__DIR__.'/../Migrations');
+         // load package's translation files
+         $this->loadTranslationsFrom(__DIR__.'/../Resources/lang', '{package_name}');
+        // public package's configurations
+        $this->publishes([
+            __DIR__ . '/../Config/{package_conf_name}.php' => config_path('{package_conf_name}.php'),
+        ]);
+    }
+
+
+    public function register()
+    {
+
+    }
+
+
+}
