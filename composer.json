@@ -1,6 +1,6 @@
 {
   "name": "modular/package",
-  "description": "This is library simplifies the code refactoring, and make system architecture more clear",
+  "description": "Use laravel package system for developing web application as modular",
   "type": "library",
   "require-dev": {
     "no": "-1",
