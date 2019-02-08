@@ -1,8 +1,8 @@
 ### Introduction
 L-modular library gives you the ability to divide your system into multiple packages,
-each package has its own routes, controllers, resources, models , middlewares, configs, and migrations
+each package has its own required classes
 so, your system will become more clearly
-in addition to re-using the common generated packages such as (user , admin etc. ) in another projects
+in addition to simplify the re-using of the common generated packages such as (user , admin etc. ) in another projects
 
 ### Installation
 
@@ -15,7 +15,7 @@ after typing `php artisan` you can use one of the commands below
 - packages:list 
 - packages:delete `packageName`
  
-### Generated files
+### The generated files for each package
 - Config
 - Controllers
 - Middlewares
@@ -26,5 +26,5 @@ after typing `php artisan` you can use one of the commands below
 - Routes
 
 ### Contact 
-if you have an issue with library please feel free to contact me on `amr.saidam.94@gmail.com`
+if you have any issue with library, please feel free to contact me on `amr.saidam.94@gmail.com`
  
