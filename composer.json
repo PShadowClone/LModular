@@ -3,7 +3,6 @@
   "description": "Use laravel package system for developing web application as modular",
   "type": "library",
   "require-dev": {
-    "no": "-1",
     "phplang/scope-exit": "^1.0"
   },
   "license": "MIT",
