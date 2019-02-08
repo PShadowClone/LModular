@@ -19,5 +19,12 @@
     "psr-4": {
       "l-modular/Package": "src/"
     }
-  }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "http://localhost/packages.json"
+    }
+  ]
+
 }
