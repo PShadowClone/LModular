@@ -13,7 +13,7 @@
   "require": {},
   "autoload": {
     "psr-4": {
-      "l-modular/Package": "src/"
+      "l-modular\\Package\\": "src/"
     }
   },
   "repositories": [
