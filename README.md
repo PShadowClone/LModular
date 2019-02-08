@@ -1,6 +1,6 @@
 **Laravel Packages Library**
 
-Packaging concept is the concept laravel uses for it's own supported libraries, such as Carbon, guzzlehttp etc. so each one works independently on it's mean purpose with less coupling with the other packages
+Packaging concept is the concept laravel uses for it's own supported libraries, such as Carbon, guzzlehttp etc. so each one works independently on it's required purpose with less coupling with the another packages
 
 so Laravel supports packaging system for giving developer the opportunities to become as contributors in laravel world with their libraries.
 
