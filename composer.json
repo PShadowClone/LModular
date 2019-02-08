@@ -1,5 +1,5 @@
 {
-  "name": "LModular/package",
+  "name": "l-modular/package",
   "description": "Use laravel package system for developing web application as modular",
   "type": "library",
   "require-dev": {
@@ -17,7 +17,7 @@
   "require": {},
   "autoload": {
     "psr-4": {
-      "LModular/Package": "src/"
+      "l-modular/Package": "src/"
     }
   }
 }
