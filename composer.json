@@ -11,11 +11,15 @@
   ],
   "minimum-stability": "dev",
   "require": {},
+  "require-dev": {
+    "laravel/laravel": "5.*"
+  },
   "autoload": {
     "psr-4": {
       "l-modular\\Package\\": "src/"
     }
   },
+  "prefer-stable": true,
   "repositories": [
     {
       "type": "composer",

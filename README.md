@@ -10,7 +10,7 @@ in addition to simplify the re-using of the common generated packages such as (u
 $ composer require l-modular/package
 ```
 after typing `php artisan` you can use one of the commands below 
-### library commands
+### Library commands
 - packages:create `packageName`
 - packages:list 
 - packages:delete `packageName`
