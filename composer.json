@@ -11,25 +11,5 @@
   ],
   "minimum-stability": "dev",
 
-  "require": {
-    "php": ">=5.6",
-    "laravel/laravel": "5.*"
-  },
-  "require-dev": {
-    "php": ">=5.6",
-    "laravel/laravel": "5.*"
-  },
-  "autoload": {
-    "psr-4": {
-      "l-modular\\Package\\": "src/"
-    }
-  },
-  "prefer-stable": true,
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "http://localhost/packages.json"
-    }
-  ]
-
+  "require": {}
 }
