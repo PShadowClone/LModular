@@ -4,10 +4,10 @@
 namespace Modulars\Package\Console;
 
 use Illuminate\Console\Command;
-use Modular\Package\Models\DeletePackageModel;
-use Modular\Package\Models\MasterDir;
-use Modular\Package\Models\PackageDir;
-use Modular\Package\Models\ShowPackages;
+use Modulars\Package\Models\DeletePackageModel;
+use Modulars\Package\Models\MasterDir;
+use Modulars\Package\Models\PackageDir;
+use Modulars\Package\Models\ShowPackages;
 
 class DeletePackage extends MasterConsole
 {

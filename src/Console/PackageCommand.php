@@ -3,9 +3,9 @@
 namespace Modulars\Package\Console;
 
 
-use Modular\Package\Exception\MasterDirException;
-use Modular\Package\Models\MasterDir;
-use Modular\Package\Models\PackageDir;
+use Modulars\Package\Exception\MasterDirException;
+use Modulars\Package\Models\MasterDir;
+use Modulars\Package\Models\PackageDir;
 
 class PackageCommand extends MasterConsole
 {

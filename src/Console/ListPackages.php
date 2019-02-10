@@ -3,7 +3,7 @@
 namespace Modulars\Package\Console;
 
 use Illuminate\Console\Command;
-use Modular\Package\Models\ShowPackages;
+use Modulars\Package\Models\ShowPackages;
 
 
 class ListPackages extends Command

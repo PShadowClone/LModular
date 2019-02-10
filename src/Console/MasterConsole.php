@@ -3,7 +3,7 @@
 namespace Modulars\Package\Console;
 
 use Illuminate\Console\Command;
-use Modular\Package\Exception\MasterDirException;
+use Modulars\Package\Exception\MasterDirException;
 
 
 class MasterConsole extends Command
