@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Modular\Package\Console;
+namespace Modulars\Package\Console;
 
 use Illuminate\Console\Command;
 use Modular\Package\Models\DeletePackageModel;

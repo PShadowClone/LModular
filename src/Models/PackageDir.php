@@ -1,13 +1,13 @@
 <?php
 
 
-namespace Modular\Package\Models;
+namespace Modulars\Package\Models;
 
 
 use Illuminate\Support\Facades\App;
-use Modular\Package\Console\MasterConsole;
-use Modular\Package\Console\PackageCommand;
-use Modular\Package\Exception\MasterDirException;
+use Modulars\Package\Console\MasterConsole;
+use Modulars\Package\Console\PackageCommand;
+use Modulars\Package\Exception\MasterDirException;
 
 class PackageDir extends MasterDir
 {

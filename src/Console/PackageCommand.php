@@ -1,6 +1,6 @@
 <?php
 
-namespace Modular\Package\Console;
+namespace Modulars\Package\Console;
 
 
 use Modular\Package\Exception\MasterDirException;

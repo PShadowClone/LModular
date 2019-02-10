@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Modular\Package\Exception;
+namespace Modulars\Package\Exception;
 
 
 use Throwable;

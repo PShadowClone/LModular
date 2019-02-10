@@ -1,11 +1,11 @@
 <?php
 
-namespace Modular\Package;
+namespace Modulars\Package;
 
 use \Illuminate\Support\ServiceProvider;
-use Modular\Package\Console\DeletePackage;
-use Modular\Package\Console\ListPackages;
-use Modular\Package\Console\PackageCommand;
+use Modulars\Package\Console\DeletePackage;
+use Modulars\Package\Console\ListPackages;
+use Modulars\Package\Console\PackageCommand;
 
 class ModularServiceProvider extends ServiceProvider
 {
