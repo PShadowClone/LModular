@@ -1,5 +1,5 @@
 {
-  "name": "l-modular/package",
+  "name": "modulars/package",
   "description": "Use laravel package system for developing web application as modular",
   "type": "library",
   "license": "MIT",
@@ -10,6 +10,11 @@
     }
   ],
   "minimum-stability": "dev",
-  "prefer-stable": true
+  "prefer-stable": true,
+  "autoload": {
+    "psr-4": {
+      "Modulars/Package": "src/"
+    }
+  }
 
 }
