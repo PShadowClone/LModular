@@ -13,7 +13,7 @@
   "prefer-stable": true,
   "autoload": {
     "psr-4": {
-      "Modulars/Package": "src/"
+      "Modulars/Package/": "src/"
     }
   }
 
