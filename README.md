@@ -9,6 +9,11 @@ in addition to simplify the re-using of the common generated packages such as (u
 ```bash
 $ composer require l-modular/package
 ```
+copy service provider link to config/app.php , providers[]
+
+```bash
+Modulars\Package\ModularServiceProvider::class,
+```
 after typing `php artisan` you can use one of the commands below 
 ### Library commands
 - packages:create `packageName`
