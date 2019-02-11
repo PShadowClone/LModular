@@ -13,7 +13,12 @@
   "prefer-stable": true,
   "autoload": {
     "psr-4": {
-      "Modulars\\Package\\": "src\\"
+      "Modulars\\Package\\": "src/"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0.x-dev"
     }
   }
 
