@@ -31,5 +31,5 @@ after typing `php artisan` you can use one of the commands below
 - Routes
 
 ### Contact 
-if you have any issue with library, please feel free to contact me on `amr.saidam.94@gmail.com`
+Contact email `amr.saidam.94@gmail.com`
  
