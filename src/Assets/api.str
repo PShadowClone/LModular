@@ -1,0 +1,4 @@
+<?php
+Route::group(['namespace' => '{package_name_space}\Controllers'],function(){
+    Route::resource('{url_name}', '{controller_name}');
+});

@@ -7,11 +7,13 @@ use \Illuminate\Support\ServiceProvider;
 class {service_provider_name} extends ServiceProvider
 {
 
+    // route base path for the package
+    private $routeBasePath = __DIR__ . '/../routes/';
 
     public function boot()
     {
         // publish package's routes
-        $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
+        $this->loadRoutesFrom($this->routeBasePath.'web.php');
         //public packages resources
         $this->loadViewsFrom(__DIR__ . '/../Resources/views', '{package_name}');
         //public packages migrations
@@ -22,6 +24,8 @@ class {service_provider_name} extends ServiceProvider
         $this->publishes([
             __DIR__ . '/../Config/{package_conf_name}.php' => config_path('{package_conf_name}.php'),
         ]);
+        // publish package's api routes
+         $this->mapApiRoutes();
     }
 
 
@@ -30,5 +34,18 @@ class {service_provider_name} extends ServiceProvider
 
     }
 
+    /**
+     * Define the "api" routes for the application.
+     *
+     * These routes are typically stateless.
+     *
+     * @return void
+     */
+    protected function mapApiRoutes()
+    {
+        Route::prefix('api')
+             ->middleware('api')
+             ->group($this->routeBasePath.'api.php');
+    }
 
 }
