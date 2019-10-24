@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 namespace {package_name_space}\Providers;
 
 use \Illuminate\Support\ServiceProvider;
