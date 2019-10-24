@@ -355,7 +355,7 @@ class PackageDir extends MasterDir
     private function generatedFiles()
     {
         return ['PackageController', 'PackageModel', 'PackageMiddleware', 'PackageView', 'PackageLang', 'PackageConfiguration', 'PackageMigration', 'PackageRoutes',
-            'PackageServiceProvider'];
+            'PackageApiRoutes', 'PackageServiceProvider'];
     }
 
 
