@@ -1,0 +1,23 @@
+{
+  "name": "{package}",
+  "description": "This is {package} created by Modular library",
+  "type": "library",
+  "require-dev": {
+    "no": "-1",
+    "phplang/scope-exit": "^1.0"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Amr Saidam",
+      "email": "amr.saidam.94@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "{package}/App": "app/"
+    }
+  }
+}

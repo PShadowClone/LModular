@@ -1,29 +1,27 @@
 <?php
 
+
 namespace Modulars\Package\Console;
 
 
-use Modulars\Package\Exception\MasterDirException;
-use Modulars\Package\Models\MasterDir;
-use Modulars\Package\Models\PackageDir;
+use Modulars\Package\Models\Package;
 use Modulars\Package\Modular;
 
-class PackageCommand extends MasterConsole
+class Controller extends MasterConsole
 {
-
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'packages:create {name} {--path=}';
+    protected $signature = 'packages:controller {controller} {name}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create a new package';
+    protected $description = 'Create a new controller for package';
 
     /**
      * Create a new command instance.
@@ -33,7 +31,6 @@ class PackageCommand extends MasterConsole
     public function __construct()
     {
         parent::__construct();
-
     }
 
     /**
@@ -44,8 +41,8 @@ class PackageCommand extends MasterConsole
     public function handle()
     {
         $modular = new Modular($this);
-        $modular->init();
+        $path = (new Package())->find($modular->getPackageName());
+        $modular->setPackagePath($modular->basePath($path->getFullPath()));
+        $modular->generateController();
     }
-
-
 }

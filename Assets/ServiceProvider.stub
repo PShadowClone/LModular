@@ -1,0 +1,99 @@
+<?php
+
+namespace {provider_namespace};
+
+use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+
+class {package}ServiceProvider extends ServiceProvider
+{
+
+    /**
+     * This namespace is applied to your controller routes.
+     *
+     * In addition, it is set as the URL generator's root namespace.
+     *
+     * @var string
+     */
+    protected $namespace = '{controller_namespace}\Controllers';
+
+    public function boot()
+    {
+         parent::boot();
+        //public packages resources
+        $this->loadViewsFrom(__DIR__ . '/../../resources/views', '{package}');
+        //public packages migrations
+         $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
+         // load package's translation files
+         $this->loadTranslationsFrom(__DIR__.'/../../resources/lang', '{package}');
+        // public package's configurations
+        $this->publishes([
+            __DIR__ . '/../../config/{package}.php' => config_path('{package}.php'),
+        ]);
+
+
+    }
+
+
+    public function register()
+    {
+
+    }
+
+    /**
+        * Define the routes for the application.
+        *
+        * @return void
+        */
+       public function map()
+       {
+           $this->mapApiRoutes();
+
+           $this->mapWebRoutes();
+
+           $this->mapMobileRoutes();
+       }
+
+       /**
+        * Define the "web" routes for the application.
+        *
+        * These routes all receive session state, CSRF protection, etc.
+        *
+        * @return void
+        */
+       protected function mapWebRoutes()
+       {
+           Route::middleware('web')
+               ->namespace($this->namespace)
+               ->group(base_path('{package_path}/routes/web.php'));
+       }
+
+       /**
+        * Define the "api" routes for the application.
+        *
+        * These routes are typically stateless.
+        *
+        * @return void
+        */
+       protected function mapApiRoutes()
+       {
+           Route::prefix('api')
+               ->middleware('api')
+               ->namespace($this->namespace)
+               ->group(base_path('{package_path}/routes/api.php'));
+       }
+
+       /**
+        * Define the "mobile" routes for the application.
+        *
+        * These routes are typically stateless.
+        *
+        * @return void
+        */
+       protected function mapMobileRoutes()
+       {
+           Route::prefix('v1')
+               ->namespace($this->namespace)
+               ->group(base_path('{package_path}/routes/mobile.php'));
+       }
+}

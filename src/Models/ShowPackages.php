@@ -14,6 +14,7 @@ class ShowPackages extends MasterDir
      */
     public function getListedPackages()
     {
+        return (new Package())->all();
         $masterDir = $this->getMasterDir();
         $result = $this->checkFileExistence($masterDir);
         if (!$result)

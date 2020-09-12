@@ -42,7 +42,6 @@ class ListPackages extends Command
     {
         $showPackage = new ShowPackages(null);
         $packages = $showPackage->getListedPackages();
-
         $this->printBody($packages);
     }
 

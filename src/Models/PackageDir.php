@@ -99,7 +99,6 @@ class PackageDir extends MasterDir
     }
 
 
-
     /**
      * create controller dir.
      */
@@ -353,13 +352,13 @@ class PackageDir extends MasterDir
         mkdir($this->getPackagePath($this->getPackageName()) . '/' . self::SRC_PATH);
         $this->command->info($this->getPackageName() . ' : src folder generated successfully');
         $createdFolders = $this->createdFolders();
-        foreach ($createdFolders as $folder){
-            $functionName= 'create'.$folder.'Dir';
+        foreach ($createdFolders as $folder) {
+            $functionName = 'create' . $folder . 'Dir';
             $this->$functionName();
         }
         $generatedFiles = $this->generatedFiles();
-        foreach ($generatedFiles as $file){
-            $functionName= 'generate'.$file;
+        foreach ($generatedFiles as $file) {
+            $functionName = 'generate' . $file;
             $this->$functionName();
         }
         $this->getFrameworkServiceProvider();
