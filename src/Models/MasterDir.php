@@ -4,8 +4,6 @@
 namespace Modulars\Package\Models;
 
 
-use Modulars\Package\Console\MasterConsole;
-use Modulars\Package\Console\PackageCommand;
 use Modulars\Package\Exception\MasterDirException;
 
 class MasterDir

@@ -2,10 +2,6 @@
 
 namespace Modulars\Package\Console;
 
-
-use Modulars\Package\Exception\MasterDirException;
-use Modulars\Package\Models\MasterDir;
-use Modulars\Package\Models\PackageDir;
 use Modulars\Package\Modular;
 
 class PackageCommand extends MasterConsole
