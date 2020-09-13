@@ -1,5 +1,5 @@
 {
-  "name": "Modular",
+  "name": "Modular/package",
   "description": "Use laravel package system for developing web application as modular",
   "type": "library",
   "license": "MIT",
