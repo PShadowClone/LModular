@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Modulars\Package\Console;
+namespace Modular\Console;
 
 
-use Modulars\Package\Models\Package;
-use Modulars\Package\Modular;
+use Modular\Models\Package;
+use Modular\Modular;
 
 class Repository extends MasterConsole
 {

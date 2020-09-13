@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Modulars\Package\traits;
+namespace Modular\traits;
 
 
-use Modulars\Package\Models\MasterDir;
+use Modular\Models\MasterDir;
 
 trait Package
 {

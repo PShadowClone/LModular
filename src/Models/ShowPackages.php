@@ -1,8 +1,8 @@
 <?php
 
-namespace Modulars\Package\Models;
+namespace Modular\Models;
 
-use Modulars\Package\Console\MasterConsole;
+use Modular\Console\MasterConsole;
 
 class ShowPackages extends MasterDir
 {

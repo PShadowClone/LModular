@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Modulars\Package\traits;
+namespace Modular\traits;
 
 
-use Modulars\Package\Console\MasterConsole;
-use Modulars\Package\Models\MasterDir;
+use Modular\Console\MasterConsole;
+use Modular\Models\MasterDir;
 
 trait Base
 {

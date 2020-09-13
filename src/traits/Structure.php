@@ -1,14 +1,14 @@
 <?php
 
 
-namespace Modulars\Package\traits;
+namespace Modular\traits;
 
 
-use Modulars\Package\traits\Structure\App;
-use Modulars\Package\traits\Structure\Config;
-use Modulars\Package\traits\Structure\Database;
-use Modulars\Package\traits\Structure\Resource;
-use Modulars\Package\traits\Structure\Route;
+use Modular\traits\Structure\App;
+use Modular\traits\Structure\Config;
+use Modular\traits\Structure\Database;
+use Modular\traits\Structure\Resource;
+use Modular\traits\Structure\Route;
 
 trait Structure
 {

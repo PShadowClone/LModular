@@ -1,9 +1,9 @@
 <?php
 
-namespace Modulars\Package\Console;
+namespace Modular\Console;
 
 use Illuminate\Console\Command;
-use Modulars\Package\Models\ShowPackages;
+use Modular\Models\ShowPackages;
 
 
 class ListPackages extends Command

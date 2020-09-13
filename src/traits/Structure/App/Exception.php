@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Modulars\Package\traits\Structure\App;
+namespace Modular\traits\Structure\App;
 
 
 trait Exception

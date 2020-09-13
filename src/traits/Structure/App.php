@@ -1,14 +1,14 @@
 <?php
 
 
-namespace Modulars\Package\traits\Structure;
+namespace Modular\traits\Structure;
 
 
-use Modulars\Package\traits\Structure\App\Exception;
-use Modulars\Package\traits\Structure\App\Http;
-use Modulars\Package\traits\Structure\App\Model;
-use Modulars\Package\traits\Structure\App\Provider;
-use Modulars\Package\traits\Structure\App\Repository;
+use Modular\traits\Structure\App\Exception;
+use Modular\traits\Structure\App\Http;
+use Modular\traits\Structure\App\Model;
+use Modular\traits\Structure\App\Provider;
+use Modular\traits\Structure\App\Repository;
 
 trait App
 {

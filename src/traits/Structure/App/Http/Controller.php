@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Modulars\Package\traits\Structure\App\Http;
+namespace Modular\traits\Structure\App\Http;
 
 
 trait Controller

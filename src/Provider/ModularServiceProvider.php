@@ -1,16 +1,16 @@
 <?php
 
-namespace Modulars\Package\Provider;
+namespace Modular\Provider;
 
 use \Illuminate\Support\ServiceProvider;
-use Modulars\Package\Console\Controller;
-use Modulars\Package\Console\DeletePackage;
-use Modulars\Package\Console\ListPackages;
-use Modulars\Package\Console\Middleware;
-use Modulars\Package\Console\Migration;
-use Modulars\Package\Console\Model;
-use Modulars\Package\Console\PackageCommand;
-use Modulars\Package\Console\Repository;
+use Modular\Console\Controller;
+use Modular\Console\DeletePackage;
+use Modular\Console\ListPackages;
+use Modular\Console\Middleware;
+use Modular\Console\Migration;
+use Modular\Console\Model;
+use Modular\Console\PackageCommand;
+use Modular\Console\Repository;
 
 
 class ModularServiceProvider extends ServiceProvider

@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Modulars\Package\Models;
+namespace Modular\Models;
 
 
-use Modulars\Package\Exception\MasterDirException;
+use Modular\Exception\MasterDirException;
 
 class MasterDir
 {

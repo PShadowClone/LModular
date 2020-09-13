@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Modulars\Package\Exception;
+namespace Modular\Exception;
 
 
 class PackageNotFound extends \Exception

@@ -1,10 +1,10 @@
 <?php
 
 
-namespace Modulars\Package\Models;
+namespace Modular\Models;
 
 
-use Modulars\Package\traits\Base;
+use Modular\traits\Base;
 
 class Package
 {

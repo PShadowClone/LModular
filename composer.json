@@ -1,5 +1,5 @@
 {
-  "name": "modulars/package",
+  "name": "Modular/package",
   "description": "Use laravel package system for developing web application as modular",
   "type": "library",
   "license": "MIT",
@@ -13,13 +13,15 @@
   "prefer-stable": true,
   "autoload": {
     "psr-4": {
-      "Modular\\Package\\": "src/"
-    }
+      "Modular\\": "src/"
+    },
+    "classmap": [
+      "src/"
+    ]
   },
   "extra": {
     "branch-alias": {
       "dev-master": "1.0.x-dev"
     }
   }
-
 }

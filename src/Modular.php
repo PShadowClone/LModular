@@ -1,18 +1,18 @@
 <?php
 
 
-namespace Modulars\Package;
+namespace Modular;
 
 
-use Modulars\Package\traits\Asset;
-use Modulars\Package\traits\Base;
-use Modulars\Package\traits\Composer;
-use Modulars\Package\traits\Controllers;
-use Modulars\Package\traits\Destroy;
-use Modulars\Package\traits\Init;
-use Modulars\Package\traits\Package;
-use Modulars\Package\traits\Register;
-use Modulars\Package\traits\Structure;
+use Modular\traits\Asset;
+use Modular\traits\Base;
+use Modular\traits\Composer;
+use Modular\traits\Controllers;
+use Modular\traits\Destroy;
+use Modular\traits\Init;
+use Modular\traits\Package;
+use Modular\traits\Register;
+use Modular\traits\Structure;
 
 class Modular
 {

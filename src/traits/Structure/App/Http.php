@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Modulars\Package\traits\Structure\App;
+namespace Modular\traits\Structure\App;
 
 
-use Modulars\Package\traits\Structure\App\Http\Controller;
-use Modulars\Package\traits\Structure\App\Http\Middleware;
+use Modular\traits\Structure\App\Http\Controller;
+use Modular\traits\Structure\App\Http\Middleware;
 
 trait Http
 {

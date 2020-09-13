@@ -1,9 +1,9 @@
 <?php
 
-namespace Modulars\Package\Console;
+namespace Modular\Console;
 
 use Illuminate\Console\Command;
-use Modulars\Package\Exception\MasterDirException;
+use Modular\Exception\MasterDirException;
 
 
 class MasterConsole extends Command

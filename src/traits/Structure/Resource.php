@@ -1,12 +1,12 @@
 <?php
 
 
-namespace Modulars\Package\traits\Structure;
+namespace Modular\traits\Structure;
 
 
-use Modulars\Package\traits\Structure\Resource\Js;
-use Modulars\Package\traits\Structure\Resource\Lang;
-use Modulars\Package\traits\Structure\Resource\View;
+use Modular\traits\Structure\Resource\Js;
+use Modular\traits\Structure\Resource\Lang;
+use Modular\traits\Structure\Resource\View;
 
 trait Resource
 {

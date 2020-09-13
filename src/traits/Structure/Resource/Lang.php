@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Modulars\Package\traits\Structure\Resource;
+namespace Modular\traits\Structure\Resource;
 
 
 trait Lang

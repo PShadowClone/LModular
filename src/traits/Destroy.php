@@ -1,20 +1,20 @@
 <?php
 
 
-namespace Modulars\Package\traits;
+namespace Modular\traits;
 
 
-use Modulars\Package\Exception\PackageNotFound;
+use Modular\Exception\PackageNotFound;
 
 trait Destroy
 {
     /**
      * get package model instance
-     * @return \Modulars\Package\Models\Package
+     * @return \Modular\Models\Package
      */
     function getPackageInstance()
     {
-        return new \Modulars\Package\Models\Package();
+        return new \Modular\Models\Package();
     }
 
     /**

@@ -1,9 +1,9 @@
 <?php
 
 
-namespace Modulars\Package\Console;
+namespace Modular\Console;
 
-use Modulars\Package\Modular;
+use Modular\Modular;
 
 class DeletePackage extends MasterConsole
 {

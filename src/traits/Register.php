@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Modulars\Package\traits;
+namespace Modular\traits;
 
 
 trait Register
@@ -30,7 +30,7 @@ trait Register
      */
     function register()
     {
-        (new \Modulars\Package\Models\Package(['package' => $this->getPackageName(), 'createdAt' => $this->getCreatedAt(), 'fullPath' => $this->getPath()]))
+        (new \Modular\Models\Package(['package' => $this->getPackageName(), 'createdAt' => $this->getCreatedAt(), 'fullPath' => $this->getPath()]))
             ->register();
     }
 }

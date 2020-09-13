@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Modulars\Package\traits;
+namespace Modular\traits;
 
 
 trait Asset

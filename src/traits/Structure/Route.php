@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Modulars\Package\traits\Structure;
+namespace Modular\traits\Structure;
 
 
 trait Route
