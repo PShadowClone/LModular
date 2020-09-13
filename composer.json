@@ -14,10 +14,7 @@
   "autoload": {
     "psr-4": {
       "Modular\\": "src/"
-    },
-    "classmap": [
-      "src/"
-    ]
+    }
   },
   "extra": {
     "branch-alias": {
