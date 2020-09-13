@@ -315,6 +315,22 @@ class PackageDir extends MasterDir
 
     }
 
+    /**
+     * generate new Api Routes for the new package
+     */
+    private function generatePackageApiRoutes()
+    {
+        $packageModel = $this->getDir('api.str', true);
+        $packageModelContents = file_get_contents($packageModel);
+        $newControllerContent = $this->replace($packageModelContents,
+            ['{package_name_space}', '{controller_name}', '{url_name}'],
+            [$this->getNameSpace(), $this->getControllerName(), strtolower($this->getPackageName())]);
+        $packageModel = $this->getPackagePath($this->getPackageName()) . '/' . self::ROUTES_PATH . '/api.php';
+        file_put_contents($packageModel, $newControllerContent);
+        $this->command->info($this->getPackageName() . ': api route generated successfully');
+
+    }
+
 
     /**
      * add package's service provider into app config file
@@ -339,7 +355,7 @@ class PackageDir extends MasterDir
     private function generatedFiles()
     {
         return ['PackageController', 'PackageModel', 'PackageMiddleware', 'PackageView', 'PackageLang', 'PackageConfiguration', 'PackageMigration', 'PackageRoutes',
-            'PackageServiceProvider'];
+            'PackageApiRoutes', 'PackageServiceProvider'];
     }
 
 
