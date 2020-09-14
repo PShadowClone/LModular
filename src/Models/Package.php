@@ -28,6 +28,10 @@ class Package
      */
     private $fullPath;
     /**
+     * storage dir.
+     */
+    const STORAGE_DIR = __DIR__ . '/../../storage';
+    /**
      * the path of storage
      */
     const STORAGE_PATH = __DIR__ . '/../../storage/packages.bak';
@@ -108,6 +112,7 @@ class Package
      */
     public function readFile()
     {
+        $this->openStorageFolder();
         $fileExistence = $this->exists(self::STORAGE_PATH);
         if (!$fileExistence)
             return [];
@@ -151,5 +156,14 @@ class Package
         return $result[$package];
     }
 
-
+    /**
+     * @param $path
+     * @return bool
+     */
+    function openStorageFolder()
+    {
+        $result = $this->exists(self::STORAGE_DIR);
+        if (!$result)
+            return $this->mkdir(self::STORAGE_DIR);
+    }
 }
