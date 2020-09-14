@@ -19,8 +19,8 @@ after typing `php artisan`, you can use one of the commands below
 ```sh
 $ php artisan packages:create {package}
 ```
-this command helps you to create new package by inserting the package name instead of 
-`${package}`
+this command helps you to create new package by inserting the package name instead  of 
+`${package}`.<br/>
 ####Notes
 - The default master folder is **Modules**, means that if you applied the command in the above, 
 the path of your package will be like `{YourProject}/Modules/{package}`
