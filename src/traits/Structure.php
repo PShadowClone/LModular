@@ -37,7 +37,7 @@ trait Structure
     {
         $name = ucfirst($this->sanitize($this->getConsole()->argument('name')));
         if ($plural)
-            return strtolower(str_plural($name));
+            return strtolower($this->str_plural($name));
         return $name;
     }
 

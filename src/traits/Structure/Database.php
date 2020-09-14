@@ -43,7 +43,7 @@ trait Database
         if (!isset($this->getConsole()->arguments()['table']))
             return $this->getPackageName($plural);
         $name = $this->sanitize($this->getConsole()->argument('table'));
-        return $plural ? str_plural($name) : ucwords($name);
+        return $plural ? $this->str_plural($name) : ucwords($name);
     }
 
     /**

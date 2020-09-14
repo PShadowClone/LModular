@@ -4,6 +4,7 @@
 namespace Modular\traits;
 
 
+use Illuminate\Support\Str;
 use Modular\Console\MasterConsole;
 use Modular\Models\MasterDir;
 
@@ -133,5 +134,16 @@ trait Base
     function sanitize($name)
     {
         return preg_replace('/[^A-Za-z0-9\-]/', '', $name);
+    }
+
+    /**
+     * plural string
+     *
+     * @param $value
+     * @return string
+     */
+    function str_plural($value)
+    {
+        return Str::plural($value);
     }
 }

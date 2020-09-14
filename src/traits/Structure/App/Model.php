@@ -60,7 +60,7 @@ trait Model
         $content = $this->getAssetFile('Model');
         $content = $this->replace($content,
             ['{model_namespace}', '{package}', "{table_name}"],
-            [$this->getModelNamespace(), $this->getGeneratedModelName(), strtolower(str_plural($this->getGeneratedModelName()))]);
+            [$this->getModelNamespace(), $this->getGeneratedModelName(), strtolower($this->str_plural($this->getGeneratedModelName()))]);
         file_put_contents($this->getModelPath() . $this->fileSeparator() . $this->getGeneratedModelName() . '.php', $content);
         $this->printConsole($msg ?? "< Model > generated successfully");
     }

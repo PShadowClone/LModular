@@ -42,7 +42,7 @@ trait Package
      */
     function getPluralPackageName()
     {
-        return strtolower(str_plural($this->getPackageName()));
+        return strtolower($this->str_plural($this->getPackageName()));
     }
 
     /**
