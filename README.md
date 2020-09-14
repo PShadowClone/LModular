@@ -21,7 +21,7 @@ $ php artisan packages:create {package}
 ```
 this command helps you to create new package by inserting the package name instead  of 
 `${package}`.<br/>
-####Notes
+#### Notes
 - The default master folder is **Modules**, means that if you applied the command in the above, 
 the path of your package will be like `{YourProject}/Modules/{package}`
 - If you want to create package with custom path, you should append `--path=` to the command in the above
