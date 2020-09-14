@@ -12,7 +12,7 @@ $ composer require l-modular/package
 copy service provider link to config/app.php , providers[]
 
 ```bash
-Modular\ModularerviceProvider::class,
+Modular\Provider\ModularServiceProvider::class,
 ```
 after typing `php artisan` you can use one of the commands below 
 ### Library commands
