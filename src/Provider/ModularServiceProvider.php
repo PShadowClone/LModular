@@ -11,6 +11,8 @@ use Modular\Console\Migration;
 use Modular\Console\Model;
 use Modular\Console\PackageCommand;
 use Modular\Console\Repository;
+use Modular\Console\Request;
+use Modular\Console\Resource;
 
 
 class ModularServiceProvider extends ServiceProvider
@@ -29,7 +31,9 @@ class ModularServiceProvider extends ServiceProvider
                 Controller::class,
                 Repository::class,
                 Middleware::class,
-                Migration::class
+                Migration::class,
+                Request::class,
+                Resource::class
             ]);
         }
     }

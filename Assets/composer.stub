@@ -1,5 +1,5 @@
 {
-  "name": "{package}",
+  "name": "{package_name}",
   "description": "This is {package} created by Modular library",
   "type": "library",
   "require-dev": {

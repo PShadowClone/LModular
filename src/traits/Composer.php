@@ -32,8 +32,8 @@ trait Composer
     {
         $content = $this->getAssetFile('composer');
         $content = $this->replace($content,
-            ['{package}'],
-            [$this->getPackageName()]);
+            ['{package}', '{package_name}'],
+            [$this->getPackageName(),strtolower($this->getPackageName())]);
         file_put_contents($this->getPackagePath() . $this->fileSeparator() . 'composer.json', $content);
         $this->printConsole($msg ?? "< Composer > generated successfully");
         $this->updateFrameworkComposerFile();
@@ -49,7 +49,7 @@ trait Composer
     {
         $superComposer = file_get_contents(base_path('composer.json'));
         $content = json_decode($superComposer, true);
-        unset( $content['autoload-dev']['psr-4'][$this->getPackageName() . '\\' . 'App' . '\\']);
+        unset($content['autoload-dev']['psr-4'][$this->getPackageName() . '\\' . 'App' . '\\']);
         $content = json_encode($content, JSON_PRETTY_PRINT);
         $content = $this->replace($content, '\/', '/');
         file_put_contents(base_path('composer.json'), $content);

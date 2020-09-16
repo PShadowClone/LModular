@@ -6,10 +6,12 @@ namespace Modular\traits\Structure\App;
 
 use Modular\traits\Structure\App\Http\Controller;
 use Modular\traits\Structure\App\Http\Middleware;
+use Modular\traits\Structure\App\Http\Request;
+use Modular\traits\Structure\App\Http\Resource;
 
 trait Http
 {
-    use Controller, Middleware;
+    use Controller, Middleware, Request, Resource;
 
     /**
      * returns the name of http folder
@@ -45,6 +47,6 @@ trait Http
      */
     private function httpFolders()
     {
-        return ['Controller', 'Middleware'];
+        return ['Controller', 'Middleware', 'Request', 'Resource'];
     }
 }
