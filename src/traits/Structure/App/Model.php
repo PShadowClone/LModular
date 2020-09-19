@@ -49,7 +49,7 @@ trait Model
      */
     function getGeneratedModelName()
     {
-        return isset($this->getConsole()->arguments()['model']) ? ucwords($this->sanitize($this->getConsole()->argument('model'))) : $this->getPackageName();
+        return isset($this->getConsole()->arguments()['class']) ? ucwords($this->sanitize($this->getConsole()->argument('class'))) : $this->getPackageName();
     }
 
     /**

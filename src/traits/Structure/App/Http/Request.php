@@ -49,7 +49,7 @@ trait Request
      */
     function getGeneratedRequestName()
     {
-        return isset($this->getConsole()->arguments()['request']) ? ucwords($this->sanitize($this->getConsole()->argument('request'))) : 'Request';
+        return isset($this->getConsole()->arguments()['class']) ? ucwords($this->sanitize($this->getConsole()->argument('class'))) : 'Request';
     }
 
     /**

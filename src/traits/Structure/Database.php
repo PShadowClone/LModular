@@ -4,6 +4,8 @@
 namespace Modular\traits\Structure;
 
 
+use Illuminate\Support\Str;
+
 trait Database
 {
     /**
@@ -40,9 +42,9 @@ trait Database
      */
     function getGeneratedMigrationName($plural = false)
     {
-        if (!isset($this->getConsole()->arguments()['table']))
+        if (!isset($this->getConsole()->arguments()['class']))
             return $this->getPackageName($plural);
-        $name = $this->sanitize($this->getConsole()->argument('table'));
+        $name = $this->sanitize($this->getConsole()->argument('class'));
         return $plural ? $this->str_plural($name) : ucwords($name);
     }
 
@@ -57,7 +59,7 @@ trait Database
         $functionName = 'create';
         if (!$purpose)
             $functionName = 'update';
-        return date('Y_m_d') . '_00000_' . $functionName . '_' . $this->getGeneratedMigrationName(false) . '_' . 'table';
+        return date('Y_m_d') . '_00000_' . $functionName . '_' . Str::lower($this->getGeneratedMigrationName(false)) . '_' . 'table';
     }
 
 

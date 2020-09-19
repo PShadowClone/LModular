@@ -50,7 +50,7 @@ trait Middleware
      */
     function getGeneratedMiddlewareName()
     {
-        return isset($this->getConsole()->arguments()['middleware']) ? ucwords($this->sanitize($this->getConsole()->argument('middleware'))) : 'Middleware';
+        return isset($this->getConsole()->arguments()['class']) ? ucwords($this->sanitize($this->getConsole()->argument('class'))) : 'Middleware';
     }
 
     /**

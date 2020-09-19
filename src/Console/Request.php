@@ -14,7 +14,7 @@ class Request extends MasterConsole
      *
      * @var string
      */
-    protected $signature = 'packages:request {request} {name}';
+    protected $signature = 'packages:request {class} {name} {--path=}';
 
     /**
      * The console command description.
@@ -41,7 +41,7 @@ class Request extends MasterConsole
     public function handle()
     {
         $modular = new Modular($this);
-        $path = (new Package())->find($modular->getPackageName());
+        $path = $this->findPackage($modular->getPackageName(), $modular->getPath());
         $modular->setPackagePath($modular->basePath($path->getFullPath()));
         $modular->generateRequest();
     }

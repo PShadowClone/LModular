@@ -14,7 +14,7 @@ class Controller extends MasterConsole
      *
      * @var string
      */
-    protected $signature = 'packages:controller {controller} {name}';
+    protected $signature = 'packages:controller {class} {name} {--path=}';
 
     /**
      * The console command description.
@@ -41,7 +41,7 @@ class Controller extends MasterConsole
     public function handle()
     {
         $modular = new Modular($this);
-        $path = (new Package())->find($modular->getPackageName());
+        $path = (new Package())->find($modular->getPackageName() ,$modular->getPath());
         $modular->setPackagePath($modular->basePath($path->getFullPath()));
         $modular->generateController();
     }

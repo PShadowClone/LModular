@@ -49,7 +49,7 @@ trait Resource
      */
     function getGeneratedResourceName()
     {
-        return isset($this->getConsole()->arguments()['resource']) ? ucwords($this->sanitize($this->getConsole()->argument('resource'))) : 'Resource';
+        return isset($this->getConsole()->arguments()['class']) ? ucwords($this->sanitize($this->getConsole()->argument('class'))) : 'Resource';
     }
 
     /**

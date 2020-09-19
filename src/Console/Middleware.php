@@ -14,7 +14,7 @@ class Middleware extends MasterConsole
      *
      * @var string
      */
-    protected $signature = 'packages:middleware {middleware} {name}';
+    protected $signature = 'packages:middleware {class} {name} {--path=}';
 
     /**
      * The console command description.
@@ -41,7 +41,7 @@ class Middleware extends MasterConsole
     public function handle()
     {
         $modular = new Modular($this);
-        $path = (new Package())->find($modular->getPackageName());
+        $path = $this->findPackage($modular->getPackageName(), $modular->getPath());
         $modular->setPackagePath($modular->basePath($path->getFullPath()));
         $modular->generateMiddleware();
     }

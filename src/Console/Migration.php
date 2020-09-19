@@ -14,7 +14,7 @@ class Migration extends MasterConsole
      *
      * @var string
      */
-    protected $signature = 'packages:migration {table} {name}';
+    protected $signature = 'packages:migration {class} {name} {--path=}';
 
     /**
      * The console command description.
@@ -41,7 +41,7 @@ class Migration extends MasterConsole
     public function handle()
     {
         $modular = new Modular($this);
-        $path = (new Package())->find($modular->getPackageName());
+        $path = $this->findPackage($modular->getPackageName(), $modular->getPath());
         $modular->setPackagePath($modular->basePath($path->getFullPath()));
         $modular->generateMigration();
     }

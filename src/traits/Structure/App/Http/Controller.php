@@ -49,7 +49,7 @@ trait Controller
      */
     function getGeneratedControllerName()
     {
-        return isset($this->getConsole()->arguments()['controller']) ? ucwords($this->sanitize($this->getConsole()->argument('controller'))) : 'Controller';
+        return isset($this->getConsole()->arguments()['class']) ? ucwords($this->sanitize($this->getConsole()->argument('class'))) : 'Controller';
     }
 
     /**

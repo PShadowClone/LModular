@@ -49,7 +49,7 @@ trait Repository
      */
     function getGeneratedRepositoryName()
     {
-        return isset($this->getConsole()->arguments()['repo']) ? ucwords($this->sanitize($this->getConsole()->argument('repo'))) : 'Repository';
+        return isset($this->getConsole()->arguments()['class']) ? ucwords($this->sanitize($this->getConsole()->argument('class'))) : 'Repository';
     }
 
     /**

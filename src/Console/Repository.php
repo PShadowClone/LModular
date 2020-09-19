@@ -14,7 +14,7 @@ class Repository extends MasterConsole
      *
      * @var string
      */
-    protected $signature = 'packages:repo {repo} {name}';
+    protected $signature = 'packages:repo {class} {name} {--path=}';
 
     /**
      * The console command description.
@@ -41,7 +41,7 @@ class Repository extends MasterConsole
     public function handle()
     {
         $modular = new Modular($this);
-        $path = (new Package())->find($modular->getPackageName());
+        $path = $this->findPackage($modular->getPackageName(), $modular->getPath());
         $modular->setPackagePath($modular->basePath($path->getFullPath()));
         $modular->generateRepository();
     }
