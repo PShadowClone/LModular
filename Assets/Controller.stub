@@ -14,7 +14,7 @@ class {controller} extends BaseController
      */
     public function index()
     {
-        return view("{package}::welcome");
+        return view("{PackageWithParent}::welcome");
     }
 
     /**

@@ -21,14 +21,14 @@ class {package}ServiceProvider extends ServiceProvider
     {
          parent::boot();
         //public packages resources
-        $this->loadViewsFrom(__DIR__ . '/../../resources/views', '{package}');
+        $this->loadViewsFrom(__DIR__ . '/../../resources/views', '{PackageWithParent}');
         //public packages migrations
          $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
          // load package's translation files
-         $this->loadTranslationsFrom(__DIR__.'/../../resources/lang', '{package}');
+         $this->loadTranslationsFrom(__DIR__.'/../../resources/lang', '{PackageWithParent}');
         // public package's configurations
         $this->publishes([
-            __DIR__ . '/../../config/{package}.php' => config_path('{package}.php'),
+            __DIR__ . '/../../config/{package}.php' => config_path('{PackageWithParent}.php'),
         ]);
 
 

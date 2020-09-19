@@ -173,12 +173,31 @@ trait Base
     }
 
     /**
+     * returns package's parent
+     * @return mixed
+     */
+    function getParent()
+    {
+        $paths = explode('/', $this->getPath());
+        return $paths[sizeof($paths) - 2];
+    }
+
+    /**
+     * package name with its parent
+     * @return string
+     */
+    function packageNameWithParent()
+    {
+        $parent = $this->getParent();
+        return ucwords($parent) . $this->getPackageName();
+    }
+
+    /**
      * get the parent dir of package
      */
     function getParentDir()
     {
-        $paths = explode('/', $this->getPath());
-        $parent = $paths[sizeof($paths) - 2];
+        $parent = $this->getParent();
         if (Str::lower($parent) != 'modules')
             return ucwords($parent) . '\\';
         return '';

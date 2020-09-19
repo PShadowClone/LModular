@@ -58,8 +58,8 @@ trait Controller
     function generateController()
     {
         $content = $this->getAssetFile('Controller');
-        $content = $this->replace($content, ['{controller_namespace}', '{package}', '{controller}'],
-            [$this->getControllerNamespace(), $this->getPackageName(), $this->getGeneratedControllerName()]);
+        $content = $this->replace($content, ['{controller_namespace}', '{package}', '{controller}', "{PackageWithParent}"],
+            [$this->getControllerNamespace(), $this->getPackageName(), $this->getGeneratedControllerName(), $this->packageNameWithParent()]);
         file_put_contents($this->getControllerPath() . $this->fileSeparator() . $this->getGeneratedControllerName() . '.php', $content);
         $this->printConsole($msg ?? "< Controller > generated successfully");
     }

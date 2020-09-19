@@ -44,6 +44,7 @@ trait Provider
         return $this->getAppNamespace() . '\Providers';
     }
 
+
     /**
      * generate the provider of package
      */
@@ -52,8 +53,8 @@ trait Provider
         $content = $this->getAssetFile('ServiceProvider');
         $packageFullPath = $this->getMasterFolder() . $this->fileSeparator() . $this->getPackageName();
         $content = $this->replace($content,
-            ['{provider_namespace}', '{package}', "{package_path}", "{controller_namespace}"],
-            [$this->getProviderNamespace(), $this->getPackageName(), $packageFullPath, $this->getControllerNamespace()]);
+            ['{provider_namespace}', '{package}', "{package_path}", "{controller_namespace}", "{PackageWithParent}"],
+            [$this->getProviderNamespace(), $this->getPackageName(), $packageFullPath, $this->getControllerNamespace(), $this->packageNameWithParent()]);
         file_put_contents($this->getProviderPath() . $this->fileSeparator() . $this->getPackageName() . 'ServiceProvider.php', $content);
         $this->printConsole($msg ?? "< Provider > generated successfully");
     }
@@ -86,7 +87,7 @@ trait Provider
     function removeFrameworkServiceProvider()
     {
         $result = file_get_contents($this->basePath('config/app.php'));
-        $newServiceProvider = ' '.$this->getProviderNamespace() . '\\' . $this->getPackageName() . 'ServiceProvider::class,';
+        $newServiceProvider = ' ' . $this->getProviderNamespace() . '\\' . $this->getPackageName() . 'ServiceProvider::class,';
         $newContent = $this->replace($result, $newServiceProvider, '');
         file_put_contents($this->basePath('config/app.php'), $newContent);
     }
