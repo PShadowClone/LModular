@@ -40,7 +40,7 @@ trait Controller
      */
     function getControllerNamespace()
     {
-        return $this->getPackageName() . '\App\Http';
+        return $this->getHttpNamespace();
     }
 
     /**

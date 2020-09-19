@@ -40,7 +40,7 @@ trait Resource
      */
     function getResourceNamespace()
     {
-        return $this->getPackageName() . '\App\Http';
+        return $this->getHttpNamespace();
     }
 
     /**

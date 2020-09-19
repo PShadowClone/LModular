@@ -40,7 +40,7 @@ trait Exception
      */
     function getExceptionNamespace()
     {
-        return $this->getPackageName() . '\App';
+        return $this->getAppNamespace();
     }
 
     /**

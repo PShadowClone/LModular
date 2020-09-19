@@ -24,7 +24,7 @@ trait Destroy
      */
     function __findPackage($package)
     {
-        return $this->getPackageInstance()->find($package);
+        return $this->getPackageInstance()->find($package, $this->getPath());
     }
 
     /**
@@ -40,6 +40,7 @@ trait Destroy
         $this->removeFrameworkServiceProvider();
         $this->removeFrameworkComposerFile();
         $this->removePackage($this->basePath($package->getFullPath()));
+        $package->refresh();
         $this->printConsole("< {$this->getPackageName()} > deleted successfully");
     }
 }

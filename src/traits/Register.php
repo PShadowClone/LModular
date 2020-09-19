@@ -32,9 +32,11 @@ trait Register
      */
     function register()
     {
-        $package = $this->getPackageInstance()->find($this->getPackageName());
-        if ($package && strtolower($this->getPath()) == strtolower($package->getFullPath()))
-            throw new PackageAlreadyExisted();
+        $package = $this->getPackageInstance()->find($this->getPackageName(), $this->getPath());
+//        if ($package && strtolower($this->getPath()) == strtolower($package->getFullPath()))
+//            throw new PackageAlreadyExisted();
+        if ($package)
+            $this->setDuplicate(true);
         (new \Modular\Models\Package(['package' => $this->getPackageName(), 'createdAt' => $this->getCreatedAt(), 'fullPath' => $this->getPath()]))
             ->register();
     }

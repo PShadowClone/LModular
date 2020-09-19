@@ -18,6 +18,31 @@ trait Base
     public $console;
 
     /**
+     * flag indicates if there is name duplication
+     *
+     * @var
+     */
+    public $duplicate = false;
+
+
+    /**
+     * @param mixed $duplicate
+     */
+    public function setDuplicate($duplicate): void
+    {
+        $this->duplicate = $duplicate;
+    }
+
+    /**
+     * @param mixed $duplicate
+     */
+    public function isDuplicated(): bool
+    {
+        return $this->duplicate;
+    }
+
+
+    /**
      * create directories
      *
      * @param $path
@@ -145,5 +170,17 @@ trait Base
     function str_plural($value)
     {
         return Str::plural($value);
+    }
+
+    /**
+     * get the parent dir of package
+     */
+    function getParentDir()
+    {
+        $paths = explode('/', $this->getPath());
+        $parent = $paths[sizeof($paths) - 2];
+        if (Str::lower($parent) != 'modules')
+            return ucwords($parent) . '\\';
+        return '';
     }
 }

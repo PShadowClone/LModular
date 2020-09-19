@@ -32,6 +32,18 @@ trait Http
     }
 
     /**
+     * get http namespace
+     *
+     * @return string
+     *
+     */
+    function getHttpNamespace()
+    {
+        return $this->getParentDir() . $this->getPackageName() . '\App\Http';
+    }
+
+
+    /**
      * create http folder
      */
     function initHttpFolder()

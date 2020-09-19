@@ -40,7 +40,7 @@ trait Model
      */
     function getModelNamespace()
     {
-        return $this->getPackageName() . '\App';
+        return $this->getAppNamespace();
     }
 
     /**

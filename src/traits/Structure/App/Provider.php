@@ -41,7 +41,7 @@ trait Provider
      */
     function getProviderNamespace()
     {
-        return $this->getPackageName() . '\App\Providers';
+        return $this->getAppNamespace() . '\Providers';
     }
 
     /**
@@ -86,7 +86,7 @@ trait Provider
     function removeFrameworkServiceProvider()
     {
         $result = file_get_contents($this->basePath('config/app.php'));
-        $newServiceProvider = $this->getProviderNamespace() . '\\' . $this->getPackageName() . 'ServiceProvider::class,';
+        $newServiceProvider = ' '.$this->getProviderNamespace() . '\\' . $this->getPackageName() . 'ServiceProvider::class,';
         $newContent = $this->replace($result, $newServiceProvider, '');
         file_put_contents($this->basePath('config/app.php'), $newContent);
     }

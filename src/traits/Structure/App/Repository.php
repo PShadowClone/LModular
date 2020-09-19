@@ -40,7 +40,7 @@ trait Repository
      */
     function getRepositoryNamespace()
     {
-        return $this->getPackageName() . '\App';
+        return $this->getAppNamespace() . '\App';
     }
 
     /**

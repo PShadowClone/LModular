@@ -5,6 +5,7 @@ namespace Modular\Models;
 
 
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 use Modular\traits\Base;
 use Modular\traits\Package\Config;
 
@@ -144,7 +145,7 @@ class Package
     function register()
     {
         $content = $this->readFile();
-        $content[$this->getPackage()] = [
+        $content[] = [
             'package' => $this->getPackage(),
             'fullPath' => $this->getFullPath(),
             'createdAt' => $this->getCreatedAt()
@@ -181,16 +182,18 @@ class Package
      * @param $package
      * @return mixed
      */
-    function find($package)
+    function find($name, $path)
     {
         $result = $this->readFile();
-        try {
-            $this->fill($result[$package]);
-            return $this;
-        } catch (\Exception $exception) {
+        $result = collect($result);
+        $result = $result->filter(function ($package) use ($name, $path) {
+            return Str::lower($package['package']) == Str::lower($name) &&
+                Str::lower($path) == Str::lower($package['fullPath']);
+        })->first();
+        if (!$result)
             return null;
-        }
-
+        $this->fill($result);
+        return $this;
     }
 
     /**

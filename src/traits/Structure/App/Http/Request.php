@@ -40,7 +40,7 @@ trait Request
      */
     function getRequestNamespace()
     {
-        return $this->getPackageName() . '\App\Http';
+        return $this->getHttpNamespace();
     }
 
     /**

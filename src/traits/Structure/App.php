@@ -29,7 +29,19 @@ trait App
      */
     function getAppPath()
     {
+
         return $this->getPackagePath() . $this->fileSeparator() . $this->getAppName();
+    }
+
+    /**
+     * get app namespace
+     *
+     * @return string
+     *
+     */
+    function getAppNamespace()
+    {
+        return $this->getParentDir() . $this->getPackageName() . '\App';
     }
 
     /**

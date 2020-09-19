@@ -41,7 +41,7 @@ trait Middleware
      */
     function getMiddlewareNamespace()
     {
-        return $this->getPackageName() . '\App\Http';
+        return $this->getHttpNamespace();
     }
 
     /**

@@ -12,7 +12,7 @@ class DeletePackage extends MasterConsole
      *
      * @var string
      */
-    protected $signature = 'packages:delete {name}';
+    protected $signature = 'packages:delete {name} {--path=}';
 
     /**
      * The console command description.
