@@ -4,6 +4,7 @@
 namespace Modular\Models;
 
 
+use Illuminate\Support\Facades\File;
 use Modular\traits\Base;
 
 class Package
@@ -34,7 +35,24 @@ class Package
     /**
      * the path of storage
      */
-    const STORAGE_PATH = __DIR__ . '/../../storage/packages.bak';
+    const STORAGE_PATH = __DIR__ . '/../../storage/packages.json';
+
+
+    function getStorageDir()
+    {
+        $dir = storage_path('LModular');
+        $fileExistence = File::isDirectory($dir);
+        if (!$fileExistence)
+            File::makeDirectory($dir);
+        return $dir;
+    }
+
+
+    function getStoragePath()
+    {
+        $path = $this->getStorageDir() . $this->fileSeparator() . 'packages.json';
+        return $path;
+    }
 
     /**
      * Package constructor.
@@ -113,10 +131,10 @@ class Package
     public function readFile()
     {
         $this->openStorageFolder();
-        $fileExistence = $this->exists(self::STORAGE_PATH);
+        $fileExistence = $this->exists(self::getStoragePath());
         if (!$fileExistence)
             return [];
-        return unserialize(file_get_contents(self::STORAGE_PATH));
+        return json_decode(file_get_contents(self::getStoragePath()), true);
     }
 
     /**
@@ -125,13 +143,13 @@ class Package
     function register()
     {
         $content = $this->readFile();
-        $this->fill([
+        $content[$this->getPackage()] = [
             'package' => $this->getPackage(),
             'fullPath' => $this->getFullPath(),
             'createdAt' => $this->getCreatedAt()
-        ]);
-        $content[$this->getPackage()] = $this;
-        file_put_contents(self::STORAGE_PATH, serialize($content));
+        ];
+
+        file_put_contents(self::getStoragePath(), json_encode($content, JSON_PRETTY_PRINT));
     }
 
     /**
@@ -153,7 +171,9 @@ class Package
     function find($package)
     {
         $result = $this->readFile();
-        return $result[$package];
+        $this->fill($result[$package]);
+        return $this;
+
     }
 
     /**
@@ -162,8 +182,8 @@ class Package
      */
     function openStorageFolder()
     {
-        $result = $this->exists(self::STORAGE_DIR);
+        $result = $this->exists(self::getStorageDir());
         if (!$result)
-            return $this->mkdir(self::STORAGE_DIR);
+            return $this->mkdir(self::getStorageDir());
     }
 }

@@ -57,7 +57,7 @@ trait Database
         $functionName = 'create';
         if (!$purpose)
             $functionName = 'update';
-        return date('Y_m_d') . '_00000_' . $functionName . '_' . $this->getGeneratedMigrationName(true) . '_' . 'table';
+        return date('Y_m_d') . '_00000_' . $functionName . '_' . $this->getGeneratedMigrationName(false) . '_' . 'table';
     }
 
 
