@@ -3,23 +3,25 @@
 
 namespace Modular\Console;
 
+
+use Modular\Models\Package;
 use Modular\Modular;
 
-class DeletePackage extends MasterConsole
+class Refresh extends MasterConsole
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'packages:delete {name}';
+    protected $signature = 'packages:refresh';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Delete package';
+    protected $description = 'Re-register all generated packages';
 
     /**
      * Create a new command instance.
@@ -29,7 +31,6 @@ class DeletePackage extends MasterConsole
     public function __construct()
     {
         parent::__construct();
-
     }
 
     /**
@@ -39,13 +40,8 @@ class DeletePackage extends MasterConsole
      */
     public function handle()
     {
-        try {
-            $modular = new Modular($this);
-            $modular->destroy();
-        } catch (\Exception $exception) {
-            $this->error('Could not remove the package, or package is not existed');
-        }
+        $path = new Package();
+        $path->refresh();
+        $this->info("Configurations refreshed successfully!");
     }
-
-
 }

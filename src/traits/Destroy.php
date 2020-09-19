@@ -18,14 +18,13 @@ trait Destroy
     }
 
     /**
-     * check package existence
+     * find package existence
      *
      * @return bool
      */
-    function checkPackageExistence()
+    function __findPackage($package)
     {
-        $packages = $this->getPackageInstance()->all();
-        return in_array($this->getPackageName(), $packages) ? $this->getPackageInstance()->readFile()[$this->getPackageName()] : null;
+        return $this->getPackageInstance()->find($package);
     }
 
     /**
@@ -35,7 +34,7 @@ trait Destroy
      */
     function destroy()
     {
-        $package = $this->checkPackageExistence();
+        $package = $this->__findPackage($this->getPackageName());
         if (!$package)
             throw new PackageNotFound('Sorry: package not found');
         $this->removeFrameworkServiceProvider();

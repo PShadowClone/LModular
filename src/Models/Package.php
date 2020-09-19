@@ -6,10 +6,11 @@ namespace Modular\Models;
 
 use Illuminate\Support\Facades\File;
 use Modular\traits\Base;
+use Modular\traits\Package\Config;
 
 class Package
 {
-    use Base;
+    use Base, Config;
     /**
      * datetime of creating packages
      *
@@ -153,6 +154,18 @@ class Package
     }
 
     /**
+     * refresh the configuration of packages
+     * by re-registering them in packages.json
+     */
+    function refresh()
+    {
+        file_put_contents(self::getStoragePath(), json_encode([], JSON_PRETTY_PRINT));
+        $this->packages()->each(function ($package) {
+            $package->register();
+        });
+    }
+
+    /**
      * get all generated packages
      *
      * @return array|mixed
@@ -171,8 +184,12 @@ class Package
     function find($package)
     {
         $result = $this->readFile();
-        $this->fill($result[$package]);
-        return $this;
+        try {
+            $this->fill($result[$package]);
+            return $this;
+        } catch (\Exception $exception) {
+            return null;
+        }
 
     }
 

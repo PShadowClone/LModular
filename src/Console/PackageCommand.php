@@ -40,7 +40,11 @@ class PackageCommand extends MasterConsole
     public function handle()
     {
         $modular = new Modular($this);
-        $modular->init();
+        try {
+            $modular->init();
+        } catch (\Exception $exception) {
+            $this->error($exception->getMessage());
+        }
     }
 
 

@@ -4,6 +4,8 @@
 namespace Modular\traits;
 
 
+use Modular\Exception\PackageAlreadyExisted;
+
 trait Register
 {
     /**
@@ -30,6 +32,9 @@ trait Register
      */
     function register()
     {
+        $package = $this->getPackageInstance()->find($this->getPackageName());
+        if ($package && strtolower($this->getPath()) == strtolower($package->getFullPath()))
+            throw new PackageAlreadyExisted();
         (new \Modular\Models\Package(['package' => $this->getPackageName(), 'createdAt' => $this->getCreatedAt(), 'fullPath' => $this->getPath()]))
             ->register();
     }

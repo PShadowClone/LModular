@@ -10,6 +10,7 @@ use Modular\Console\Middleware;
 use Modular\Console\Migration;
 use Modular\Console\Model;
 use Modular\Console\PackageCommand;
+use Modular\Console\Refresh;
 use Modular\Console\Repository;
 use Modular\Console\Request;
 use Modular\Console\Resource;
@@ -33,7 +34,8 @@ class ModularServiceProvider extends ServiceProvider
                 Middleware::class,
                 Migration::class,
                 Request::class,
-                Resource::class
+                Resource::class,
+                Refresh::class
             ]);
         }
     }
