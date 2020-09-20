@@ -3,7 +3,6 @@
   "description": "This is {package} created by Modular library",
   "type": "library",
   "require-dev": {
-    "no": "-1",
     "phplang/scope-exit": "^1.0"
   },
   "license": "MIT",
