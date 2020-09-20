@@ -179,7 +179,8 @@ trait Base
     function getParent()
     {
         $paths = explode('/', $this->getPath());
-        return $paths[sizeof($paths) - 2];
+        $parent = $paths[sizeof($paths) - 2];
+        return Str::lower($parent) != 'modules' ? ucwords($parent) : '';
     }
 
     /**
@@ -198,8 +199,8 @@ trait Base
     function getParentDir()
     {
         $parent = $this->getParent();
-        if (Str::lower($parent) != 'modules')
+        if (trim($parent) != '')
             return ucwords($parent) . '\\';
-        return '';
+        return $parent;
     }
 }

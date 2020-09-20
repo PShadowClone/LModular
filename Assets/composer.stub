@@ -17,7 +17,7 @@
   "require": {},
   "autoload": {
     "psr-4": {
-      "{package}/App": "app/"
+      "{package}\\App": "app/"
     }
   }
 }

@@ -26,6 +26,16 @@ trait Composer
     }
 
     /**
+     * get composer package name
+     * @return string
+     */
+    function getComposerPackageName()
+    {
+        $parent = $this->getParent();
+        return (trim($parent) != '' ? "$parent\\\\" : '') . $this->getPackageName();
+    }
+
+    /**
      * generate the composer of package
      */
     function generateComposer()
@@ -33,7 +43,7 @@ trait Composer
         $content = $this->getAssetFile('composer');
         $content = $this->replace($content,
             ['{package}', '{package_name}'],
-            [$this->getPackageName(), strtolower($this->getPackageName())]);
+            [$this->getComposerPackageName(), strtolower($this->getPackageName())]);
         file_put_contents($this->getPackagePath() . $this->fileSeparator() . 'composer.json', $content);
         $this->printConsole($msg ?? "< Composer > generated successfully");
         $this->updateFrameworkComposerFile();
