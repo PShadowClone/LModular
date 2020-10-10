@@ -8,12 +8,13 @@ use Illuminate\Support\Str;
 use Modular\traits\Structure\App;
 use Modular\traits\Structure\Config;
 use Modular\traits\Structure\Database;
+use Modular\traits\Structure\PublicFolder;
 use Modular\traits\Structure\Resource;
 use Modular\traits\Structure\Route;
 
 trait Structure
 {
-    use App, Resource, Route, Database, Config;
+    use App, Resource, Route, Database, Config, PublicFolder;
     /**
      * @var
      */
@@ -63,6 +64,7 @@ trait Structure
         $this->initResourcesFolder();
         $this->initRoutesFolder();
         $this->initConfigFolder();
+        $this->initPublicFolder();
 
     }
 
