@@ -1,0 +1,8 @@
+<?php
+
+namespace {service_namespace}\Repositories;
+
+class {service}
+{
+
+}
