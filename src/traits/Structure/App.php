@@ -9,10 +9,11 @@ use Modular\traits\Structure\App\Http;
 use Modular\traits\Structure\App\Model;
 use Modular\traits\Structure\App\Provider;
 use Modular\traits\Structure\App\Repository;
+use Modular\traits\Structure\App\Service;
 
 trait App
 {
-    use Http, Provider, Exception, Model, Repository;
+    use Http, Provider, Exception, Model, Repository, Service;
 
     /**
      * returns the name of app folder
@@ -60,6 +61,6 @@ trait App
      */
     private function appFolders()
     {
-        return ['Provider', 'Exception', 'Model', 'Http', 'Repository'];
+        return ['Provider', 'Exception', 'Model', 'Http', 'Repository', 'Service'];
     }
 }

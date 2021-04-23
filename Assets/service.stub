@@ -1,6 +1,6 @@
 <?php
 
-namespace {service_namespace}\Repositories;
+namespace {service_namespace}\Services;
 
 class {service}
 {
