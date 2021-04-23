@@ -57,10 +57,10 @@ This line deletes the package you passed and removes its ServiceProvider from `C
    $ php artisan packages:repo {repository} {package}
    ```
    this command helps you create a new **repository** in the package you chose.
-    ```sh
+   ```sh
       $ php artisan packages:service {service} {package}
-      ```
-      this command helps you create a new **service** in the package you chose.
+    ```
+   this command helps you create a new **service** in the package you chose.
 ### Contact 
 **Please**, feel free to contact me if get any kind of issues
  - Email [Amr Saidam](mailto:amr.saidam.94@gmail.com)
