@@ -15,6 +15,7 @@ use Modular\Console\Repository;
 use Modular\Console\Request;
 use Modular\Console\Resource;
 use Modular\Console\Seed;
+use Modular\Console\Service;
 
 
 class ModularServiceProvider extends ServiceProvider
@@ -37,7 +38,8 @@ class ModularServiceProvider extends ServiceProvider
                 Request::class,
                 Resource::class,
                 Refresh::class,
-                Seed::class
+                Seed::class,
+                Service::class
             ]);
         }
     }
