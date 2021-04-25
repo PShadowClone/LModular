@@ -21,6 +21,8 @@ trait Asset
      */
     function getAssetFile($fileName)
     {
+        if (\Modular\Stub::checkIfStubDirExistence())
+            return file_get_contents(\Modular\Stub::getStubDir() . "$fileName.{$this->getExtension()}");
         return file_get_contents(__DIR__ . "/../../Assets/$fileName.{$this->getExtension()}");
     }
 
@@ -38,6 +40,16 @@ trait Asset
     public function setExtension(string $extension): void
     {
         $this->extension = $extension;
+    }
+
+    /**
+     * return the path of assets folder
+     * @return string
+     * @author Amr
+     */
+    public function getAssetsFolderPath()
+    {
+        return __DIR__ . "/../../Assets";
     }
 
 }

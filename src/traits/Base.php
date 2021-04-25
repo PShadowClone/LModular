@@ -91,7 +91,7 @@ trait Base
      * @param $path
      * @return string
      */
-    function basePath($path)
+    static function basePath($path)
     {
         return base_path($path);
     }
