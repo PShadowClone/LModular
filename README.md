@@ -26,16 +26,22 @@ this command helps you to create new package by inserting the package name inste
 the path of your package will be like `{YourProject}/Modules/{package}`
 - If you want to create package with custom path, you should append `--path=` to the command in the above
 to be like `php artisan packages:create {package} --path={package_full_path}` so the result 
-will be like `{YourProject}/{path}/{package}`
-```sh
-$ php artisan packages:list 
-```
-the following command helps you show the names of packages you've created before.
-```sh
-$ php artisan packages:delete {package}
-```
-This line deletes the package you passed and removes its ServiceProvider from `Config/app`
- 
+will be like `{YourProject}/{path}/{package}`.
+    ```sh
+    $ php artisan packages:list 
+    ```
+    the following command helps you show the names of packages you've created before.
+    ```sh
+    $ php artisan packages:delete {package}
+    ```
+    This line deletes the package you passed and removes its ServiceProvider from `Config/app`
+- If you want to customize the stub files, just type the command below.
+    ```sh
+     $ php artisan packages:stubs
+    ```
+   Once you typed the command, a new folder with **Packages/l-modular/assets** path will be generated 
+   automatically with all stubs that used to generate package's classes.
+  
  ### Optional commands
  ```sh
  $ php artisan packages:model {model} {package}
@@ -66,4 +72,5 @@ This line deletes the package you passed and removes its ServiceProvider from `C
 **Please**, feel free to contact me if get any kind of issues
  - Email [Amr Saidam](mailto:amr.saidam.94@gmail.com)
  - Upwork [Amr Saidam](https://www.upwork.com/freelancers/~01b9c72b9a4f1f9cfd)
+ - Twitter [Amr Saidam](https://twitter.com/Amr_Saidam)
  
