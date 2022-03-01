@@ -178,7 +178,7 @@ trait Base
      */
     function getParent()
     {
-        $paths = explode('/', $this->getPath());
+        $paths = explode($this->fileSeparator(), $this->getPath());
         $parent = $paths[sizeof($paths) - 2];
         return Str::lower($parent) != 'modules' ? ucwords($parent) : '';
     }
