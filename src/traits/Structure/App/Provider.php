@@ -51,7 +51,7 @@ trait Provider
     function generateProvider()
     {
         $content = $this->getAssetFile('ServiceProvider');
-        $packageFullPath = $this->getMasterFolder() . $this->fileSeparator() . $this->getPackageName();
+        $packageFullPath = $this->getMasterFolder() . '/' . $this->getPackageName();
         $content = $this->replace($content,
             ['{provider_namespace}', '{package}', "{package_path}", "{controller_namespace}", "{PackageWithParent}"],
             [$this->getProviderNamespace(), $this->getPackageName(), $packageFullPath, $this->getControllerNamespace(), $this->packageNameWithParent()]);
