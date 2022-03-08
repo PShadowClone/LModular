@@ -49,7 +49,6 @@ class ModularServiceProvider extends ServiceProvider
 
     public function register()
     {
-        parent::register();
     }
 
 
